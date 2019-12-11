@@ -1,0 +1,19 @@
+<div class="movies-overview">
+  <div class="movie" *ngFor="let m of Movies; index as i">
+<!--    <img src="{{m.movieImg}}" alt="{{m.movieName}}}" class="movie-poster">-->
+    <div class="movie-poster" [style.backgroundImage]="'url(' + m.Poster + ')'"></div>
+    <div class="movie-title">
+      <div class="title">{{m.Title}}</div>
+    </div>
+    <div class="overlay">
+<!--      <div *ngIf="isFavorited(m); else ElseBlock" class="heart favorited" (click)="addToFavorites(m)"></div>-->
+<!--      <ng-template #ElseBlock>-->
+<!--        <div class="heart" (click)="addToFavorites(m)"></div>-->
+<!--      </ng-template>-->
+      <div *ngIf="isFavorited(m); else ElseBlock" class="heart favorited" [classList]="isFavorited(m)" (click)="addToFavorites(m)"></div>
+      <ng-template #ElseBlock>
+        <div class="heart" [classList]="isFavorited(m)" (click)="addToFavorites(m)"></div>
+      </ng-template>
+    </div>
+  </div>
+</div>
