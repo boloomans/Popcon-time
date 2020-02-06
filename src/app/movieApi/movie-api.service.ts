@@ -64,7 +64,7 @@ export class MovieApiService {
               console.log('Max request stating timeout');
               this.RequestCount = 0;
               setTimeout(z => {
-                console.log('únpaused');
+                console.log('unpaused');
               }, 10000);
             }
           } else {
