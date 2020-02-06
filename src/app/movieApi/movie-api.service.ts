@@ -22,13 +22,14 @@ export class MovieApiService {
   private RequestCount = 0;
   public MovieList: Movie[] = [];
   constructor(private httpClient: HttpClient) {
-    this.getMovieIdsNew(30);
+    this.getMovieIdsNew(1);
   }
 
   public getMovie(MovieData) {
     const  locMovie = JSON.parse(localStorage.getItem(MovieData.title.toLowerCase()));
     if (localStorage.getItem(MovieData.title.toLowerCase()) !== null) {
       if (locMovie.Response === 'True') {
+        console.log('pushed');
         this.MovieList.push(JSON.parse(localStorage.getItem(MovieData.title.toLowerCase())));
       }
     } else {
@@ -45,11 +46,12 @@ export class MovieApiService {
     }
   }
 
-  getMovieByName(title: string): Observable<Movie> {
+  getMovieByName(imdbID: string): Observable<Movie> {
     // TODO: send the message _after_ fetching the hero
     // this.messageService.add(`HeroService: fetched hero id=${id}`);
-    console.log('getting movie ' + title);
-    return of(this.MovieList.find(movie => movie.Title === title));
+    console.log(this.MovieList);
+    console.log(this.MovieList[2].imdbID);
+    return of(this.MovieList.find(movie => movie.imdbID === imdbID));
   }
 
   public async getMovieIdsNew(Pages?: number) {

@@ -24,9 +24,12 @@ export class MoviesDetailComponent implements OnInit {
   }
 
   getMovie(): void {
-    const title = this.route.snapshot.paramMap.get('title');
-    this.movieService.getMovieByName(name)
-      .subscribe(movie => this.movie = movie);
+    const imdbID = this.route.snapshot.paramMap.get('imdbID');
+    if (imdbID) {
+      this.movieService.getMovieByName(imdbID)
+        .subscribe(movie => this.movie = movie);
+    }
+    console.log(this.movie);
   }
 
 }

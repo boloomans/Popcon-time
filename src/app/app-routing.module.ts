@@ -8,7 +8,7 @@ import { MoviesDetailComponent} from './movies-overview/movies-detail/movies-det
 const AppRoutingModule: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: MoviesOverviewComponent},
-  { path: 'detail/:title', component: MoviesDetailComponent },
+  { path: 'detail/:imdbID', component: MoviesDetailComponent },
   // {path: 'add', component: CityAddComponent},
   // {path: 'detail/:id', component: CityDetailComponent}
 ];

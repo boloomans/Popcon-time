@@ -1,5 +1,5 @@
 <div class="movies-overview">
-  <a class="movie" *ngFor="let movie of this.MovieService.MovieList; index as i" routerLink="/detail/{{movie.Title}}">
+  <a class="movie" *ngFor="let movie of this.MovieService.MovieList; index as i" routerLink="/detail/{{movie.imdbID}}">
     <div class="movie-poster" *ngIf="movie.Poster" [style.backgroundImage]="'url(' + movie.Poster + ')'"></div>
     <div class="movie-text">
       <h1 class="title">{{movie.Title}}</h1>
