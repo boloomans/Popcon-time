@@ -12,17 +12,17 @@ import { MoviesDetailComponent } from './movies-overview/movies-detail/movies-de
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MoviesOverviewComponent,
-    MoviesDetailComponent,
-  ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule,
     FormsModule,
     RoutingModule
+  ],
+  declarations: [
+    AppComponent,
+    MoviesOverviewComponent,
+    MoviesDetailComponent,
   ],
   providers: [MovieApiService],
   bootstrap: [AppComponent]

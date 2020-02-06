@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { MovieApiService} from '../../movieApi/movie-api.service';
-import {Movie} from '../../movieClass/movie';
+import { Movie } from '../../movieClass/movie';
 
 @Component({
   selector: 'app-movies-detail',

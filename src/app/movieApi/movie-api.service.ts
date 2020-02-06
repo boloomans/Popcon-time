@@ -48,6 +48,7 @@ export class MovieApiService {
   getMovieByName(title: string): Observable<Movie> {
     // TODO: send the message _after_ fetching the hero
     // this.messageService.add(`HeroService: fetched hero id=${id}`);
+    console.log('getting movie ' + title);
     return of(this.MovieList.find(movie => movie.Title === title));
   }
 
