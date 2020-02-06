@@ -1,0 +1,22 @@
+@import "variables";
+
+@mixin default-p($font-family: $standard-font-family, $font-size: $standard-font-size, $font-weight: $standard-font-weight, $text-color: $standard-text-color) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $text-color;
+  margin: 0;
+  @content
+}
+
+@mixin hover ($time: 0.2s){
+  -webkit-transition: all $time;
+  -moz-transition: all $time;
+  -ms-transition: all $time;
+  -o-transition: all $time;
+  transition: all $time;
+
+  &:not([disabled]):hover {
+    @content;
+  }
+}
