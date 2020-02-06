@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { MoviesOverviewComponent } from './movies-overview/movies-overview.component';
 import {AppComponent} from './app.component';
 import {RouterModule, Routes} from '@angular/router';
+import { MoviesDetailComponent} from './movies-overview/movies-detail/movies-detail.component';
 
 const AppRoutingModule: Routes = [
-  {path: '', component: AppComponent},
-  {path: 'home', component: MoviesOverviewComponent}
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: MoviesOverviewComponent},
+  { path: 'detail/:title', component: MoviesDetailComponent },
   // {path: 'add', component: CityAddComponent},
   // {path: 'detail/:id', component: CityDetailComponent}
 ];

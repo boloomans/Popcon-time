@@ -7,5 +7,16 @@ export class Movie {
     Year: string;
     Rating: string;
     Genre: string;
+    Response: string;
+    Metascore: string;
+    imdbRating: string;
+    imdbVotes: string;
+    imdbID: string;
+    Type: string;
+    DVD: string;
+    BoxOffice: string;
+    Production: string;
+    Website: string;
+    shortTitle: string;
 }
 

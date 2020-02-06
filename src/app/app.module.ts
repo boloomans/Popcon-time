@@ -8,12 +8,14 @@ import { MoviesOverviewComponent } from './movies-overview/movies-overview.compo
 import {FormsModule} from '@angular/forms';
 import { RoutingModule } from './app-routing.module';
 import {MovieApiService} from './movieApi/movie-api.service';
+import { MoviesDetailComponent } from './movies-overview/movies-detail/movies-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesOverviewComponent,
+    MoviesDetailComponent,
   ],
   imports: [
     BrowserModule,
