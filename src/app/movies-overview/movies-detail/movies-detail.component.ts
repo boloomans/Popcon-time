@@ -23,8 +23,8 @@ export class MoviesDetailComponent implements OnInit {
 
   getMovie(): void {
     const name = +this.route.snapshot.paramMap.get('name');
-    this.movieService.getMovie(name)
-      .subscribe(hero => this.hero = hero);
+    // this.movieService.getMovie(name)
+    //   .subscribe(hero => this.hero = hero);
   }
 
 }
