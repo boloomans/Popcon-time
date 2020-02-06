@@ -5,7 +5,7 @@
     </div>
     <div class="pages">
       <ul class="tab-list">
-        <li routerLink="/home" class="tabs link active-link"><a href="#">Movies</a></li>
+        <li class="tabs link active-link"><a routerLink="/home">Movies</a></li>
         <li class="tabs link"><a href="#">Series</a></li>
         <li class="tabs link"><a href="#">Favorites</a></li>
       </ul>
@@ -28,8 +28,7 @@
   </div>
 </header>
 <div class="view-block">
-  <app-movies-overview>
-  </app-movies-overview>
+  <router-outlet></router-outlet>
 </div>
 
 

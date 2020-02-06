@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Movie } from '../movieClass/movie';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {MoviesOverviewComponent} from '../movies-overview/movies-overview.component';
 
 // @ts-ignore
@@ -43,6 +43,12 @@ export class MovieApiService {
         console.log('got ' + MovieData.title + ' from API');
       });
     }
+  }
+
+  getMovieByName(title: string): Observable<Movie> {
+    // TODO: send the message _after_ fetching the hero
+    // this.messageService.add(`HeroService: fetched hero id=${id}`);
+    return of(this.MovieList.find(movie => movie.Title === title));
   }
 
   public async getMovieIdsNew(Pages?: number) {

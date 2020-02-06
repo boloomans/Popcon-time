@@ -1,9 +1,5 @@
 <div class="movies-overview">
-<!--  <a class="movie" *ngFor="let movie of this.MovieService.MovieList; index as i" routerLink="/detail/{{movie.Title}}">-->
-  <div class="movie" *ngFor="let movie of this.MovieService.MovieList; index as i">
-<!--  <div class="movie" *ngFor="let movie of Movies; index as i">-->
-<!--    <img src="{{movie.movieImg}}" alt="{{movie.movieName}}}" class="movie-poster">-->
-<!--    !== 'N/A' ? movie.Poster : '~src/assets/img/logo.png'-->
+  <a class="movie" *ngFor="let movie of this.MovieService.MovieList; index as i" routerLink="/detail/{{movie.Title}}">
     <div class="movie-poster" *ngIf="movie.Poster" [style.backgroundImage]="'url(' + movie.Poster + ')'"></div>
     <div class="movie-text">
       <h1 class="title">{{movie.Title}}</h1>
@@ -15,5 +11,5 @@
         <div class="heart" [classList]="isFavorited(movie)" (click)="addToFavorites(movie)"></div>
       </ng-template>
     </div>
-  </div>
+  </a>
 </div>

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { MovieApiService} from '../../movieApi/movie-api.service';
+import {Movie} from '../../movieClass/movie';
 
 @Component({
   selector: 'app-movies-detail',
@@ -14,7 +15,8 @@ export class MoviesDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieApiService,
-    private location: Location
+    private location: Location,
+    private movie: Movie
   ) { }
 
   ngOnInit() {
@@ -22,9 +24,9 @@ export class MoviesDetailComponent implements OnInit {
   }
 
   getMovie(): void {
-    const name = +this.route.snapshot.paramMap.get('name');
-    // this.movieService.getMovie(name)
-    //   .subscribe(hero => this.hero = hero);
+    const title = this.route.snapshot.paramMap.get('title');
+    this.movieService.getMovieByName(name)
+      .subscribe(movie => this.movie = movie);
   }
 
 }

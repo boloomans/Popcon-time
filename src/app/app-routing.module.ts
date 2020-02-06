@@ -25,5 +25,6 @@ const AppRoutingModule: Routes = [
     ),
     CommonModule
   ],
+  exports: [RouterModule]
 })
 export class RoutingModule {}
