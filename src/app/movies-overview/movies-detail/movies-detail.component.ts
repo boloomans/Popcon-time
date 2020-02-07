@@ -31,6 +31,4 @@ export class MoviesDetailComponent implements OnInit {
     }
     console.log(this.movie);
   }
-
 }
-// https://angular.io/tutorial/toh-pt5

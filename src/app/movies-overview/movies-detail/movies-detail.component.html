@@ -1,6 +1,6 @@
 <div *ngIf="movie">
   <h2>{{movie.Title}} Details</h2>
-  <div><span>id: </span>{{movie.id}}</div>
+  <div><span>id: </span>{{movie.imdbID}}</div>
   <div>
     <label>name:
       <input [(ngModel)]="movie.Title" placeholder="name"/>

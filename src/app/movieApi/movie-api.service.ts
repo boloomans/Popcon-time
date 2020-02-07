@@ -29,7 +29,6 @@ export class MovieApiService {
     const  locMovie = JSON.parse(localStorage.getItem(MovieData.title.toLowerCase()));
     if (localStorage.getItem(MovieData.title.toLowerCase()) !== null) {
       if (locMovie.Response === 'True') {
-        console.log('pushed');
         this.MovieList.push(JSON.parse(localStorage.getItem(MovieData.title.toLowerCase())));
       }
     } else {
