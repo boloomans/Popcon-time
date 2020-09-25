@@ -6,9 +6,9 @@ import {RouterModule, Routes} from '@angular/router';
 import { MoviesDetailComponent} from './movies-overview/movies-detail/movies-detail.component';
 
 const AppRoutingModule: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: MoviesOverviewComponent},
-  { path: 'detail/:imdbID', component: MoviesDetailComponent },
+  { path: '', redirectTo: '/Movies', pathMatch: 'full' },
+  { path: 'Movies', component: MoviesOverviewComponent},
+  { path: 'Movies/:imdbID', component: MoviesDetailComponent },
   // {path: 'add', component: CityAddComponent},
   // {path: 'detail/:id', component: CityDetailComponent}
 ];

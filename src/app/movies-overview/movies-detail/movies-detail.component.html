@@ -1,9 +1,16 @@
-<div *ngIf="movie">
-  <h2>{{movie.Title}} Details</h2>
-  <div><span>id: </span>{{movie.imdbID}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="movie.Title" placeholder="name"/>
-    </label>
+<div class="movie-detail" *ngIf="movie">
+  <div class="detail-header">
+    <div class="container large">
+      <h1 class="header-title">{{movie.Title}} Details</h1>
+      <p class="header-summary">{{movie.Plot}}</p>
+      <p class="header-rating">Rating - {{movie.Ratings[0].Value}}</p>
+      <p class="header-actors">Actors - {{movie.Actors}}</p>
+    </div>
+    <div class="container small">
+      <div class="header-image-holder">
+        <div class="header-image" *ngIf="movie.Poster" [style.backgroundImage]="'url(' + movie.Poster + ')'"></div>
+      </div>
+    </div>
+    <div class="back-btn" (click)="goBack()"><i class="flaticon-cancel"></i></div>
   </div>
 </div>

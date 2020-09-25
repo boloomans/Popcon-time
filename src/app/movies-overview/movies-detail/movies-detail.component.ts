@@ -11,24 +11,38 @@ import { Movie } from '../../movieClass/movie';
   styleUrls: ['./movies-detail.component.scss']
 })
 export class MoviesDetailComponent implements OnInit {
+  movie: Movie;
 
   constructor(
     private route: ActivatedRoute,
     private movieService: MovieApiService,
     private location: Location,
-    private movie: Movie
   ) { }
 
   ngOnInit() {
     this.getMovie();
+    this.addEvent();
   }
 
   getMovie(): void {
     const imdbID = this.route.snapshot.paramMap.get('imdbID');
     if (imdbID) {
-      this.movieService.getMovieByName(imdbID)
+      this.movieService.getMovieNew(imdbID)
         .subscribe(movie => this.movie = movie);
     }
-    console.log(this.movie);
+  }
+
+  addEvent(): void {
+    window.addEventListener('keydown', (event: KeyboardEvent) => {
+      // Fall back to event.which if event.keyCode is null
+      const keycode = event.keyCode || event.which;
+      if (keycode === 27) {
+        this.location.back();
+      }
+    });
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

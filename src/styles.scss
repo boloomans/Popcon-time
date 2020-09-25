@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@import "sass/variables";
+@import "~~src/sass/variables";
+@import "~~src/sass/mixins";
+@import "~assets/icons/flaticon.css";
 
 html{
   background: #141E30;  /* fallback for old browsers */
-  //background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
   width: 100%;
   background: repeating-linear-gradient(90deg, rgb(32, 32, 32) 0px, rgb(32, 32, 32) 2px,rgb(33, 33, 33) 2px, rgb(33, 33, 33) 4px,rgb(34, 34, 34) 4px, rgb(34, 34, 34) 6px,rgb(33, 33, 33) 6px, rgb(33, 33, 33) 8px,rgb(36, 36, 36) 8px, rgb(36, 36, 36) 10px,rgb(35, 35, 35) 10px, rgb(35, 35, 35) 12px,rgb(33, 33, 33) 12px, rgb(33, 33, 33) 14px,rgb(32, 32, 32) 14px, rgb(32, 32, 32) 16px,rgb(36, 36, 36) 16px, rgb(36, 36, 36) 18px,rgb(34, 34, 34) 18px, rgb(34, 34, 34) 20px,rgb(35, 35, 35) 20px, rgb(35, 35, 35) 22px,rgb(35, 35, 35) 22px, rgb(35, 35, 35) 24px);
 }
@@ -13,8 +14,27 @@ body{
   padding: 0;
 }
 
-a{
-  text-decoration: none;
-  color: #FFF;
+h1, h2, h3, h4, h5, h6, p, span, a{
+  color: $standard-text-color;
   font-family: $standard-font-family;
+  text-decoration: none;
+}
+
+
+.container{
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+
+  &.large{
+    width: 70%;
+  }
+
+  &.medium{
+    width: 50%;
+  }
+
+  &.small{
+    width: 30%;
+  }
 }

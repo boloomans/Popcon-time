@@ -1,18 +1,17 @@
 <header>
   <div class="header">
     <div class="logo">
-      <img src="../assets/img/logo.png" alt="Logo" class="logo-image">
+      <img src="../assets/img/logo.png" alt="Logo" class="logo-image" routerLink="">
     </div>
     <div class="pages">
       <ul class="tab-list">
-        <li class="tabs link active-link"><a routerLink="/home">Movies</a></li>
-        <li class="tabs link"><a href="#">Series</a></li>
-        <li class="tabs link"><a href="#">Favorites</a></li>
+        <li class="tabs link" routerLinkActive="active-link" routerLink="/Movies"><span>Movies</span></li>
+        <li class="tabs link"><span>Series</span></li>
+        <li class="tabs link"><span>Favorites</span></li>
       </ul>
       <ul class="icon-list">
-        <li class="icons link"><a href="#">X</a></li>
-        <li class="icons link"><a href="#">X</a></li>
-        <li class="icons link"><a href="#">X</a></li>
+        <li class="icons link"><span class="flaticon-magnifying-glass"></span></li>
+        <li class="icons link"><span class="flaticon-settings"></span></li>
       </ul>
 <!--      <ul class="tab-list">-->
 <!--        <li class="tabs link active-link"><a href="#" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Movies</a></li>-->
@@ -29,6 +28,7 @@
 </header>
 <div class="view-block">
   <router-outlet></router-outlet>
+  <app-messages></app-messages>
 </div>
 
 

@@ -11,7 +11,7 @@ import { MovieApiService } from '../movieApi/movie-api.service';
 })
 export class MoviesOverviewComponent implements OnInit {
   Movie: Movie;
-  public Movies: Movie[];
+  Movies: Movie[];
 
   constructor(private MovieService: MovieApiService) { }
 
@@ -46,16 +46,21 @@ export class MoviesOverviewComponent implements OnInit {
     }
   }
 
-  public async getData() {
-    // this.Movies = this.MovieService.getMovies(await this.MovieService.getMovieList(6) as string[]);
-    const movieIds = await this.MovieService.getMovieIds(7) as string[];
-    this.Movies = this.MovieService.getMovies(null, movieIds );
-    // this.MovieService.getHeaders().subscribe( (data: HttpResponse<any>) => {
-    //   console.log(data);
-    //   console.log(data.headers.get('ETag'));
-    //   console.log(data.headers.get('x-ratelimit-remaining'));
-    // });
+  getMovies(): void {
+    this.MovieService.getMoviesNew()
+      .subscribe(Movies => this.Movies = Movies);
   }
+
+  // public async getData() {
+  //   // this.Movies = this.MovieService.getMovies(await this.MovieService.getMovieList(6) as string[]);
+  //   const movieIds = await this.MovieService.getMovieIds(7) as string[];
+  //   this.Movies = this.MovieService.getMovies(null, movieIds );
+  //   // this.MovieService.getHeaders().subscribe( (data: HttpResponse<any>) => {
+  //   //   console.log(data);
+  //   //   console.log(data.headers.get('ETag'));
+  //   //   console.log(data.headers.get('x-ratelimit-remaining'));
+  //   // });
+  // }
 }
 
 // TODO create a routing to specific movies
